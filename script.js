@@ -2,7 +2,7 @@
    BANGLOG HAIR MAGIC — script.js
    ============================================================ */
 
-const WHATSAPP_NUMBER = 'WHATSAPP_NUMBER'; // Replace with e.g. 2348012345678
+const WHATSAPP_NUMBER = '2348130831228';
 
 /* ── HEADER SCROLL ─────────────────────────────────────────── */
 const header = document.getElementById('site-header');
