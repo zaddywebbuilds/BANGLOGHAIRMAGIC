@@ -182,6 +182,123 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
+/* ── SOCIAL PROOF NOTIFICATIONS ────────────────────────────────
+   Shows real-feeling purchase alerts from locations across Nigeria
+─────────────────────────────────────────────────────────────── */
+const proofData = [
+  { name: 'Chioma',    city: 'Abuja',         product: 'Root Bloom Oil' },
+  { name: 'Blessing',  city: 'Lagos',          product: 'Edge & Follicle Revive Butter' },
+  { name: 'Ngozi',     city: 'Enugu',          product: 'Clarifying Black Shampoo' },
+  { name: 'Adaeze',    city: 'Port Harcourt',  product: 'Intense Repair Deep Conditioner' },
+  { name: 'Favour',    city: 'Umuahia',        product: 'Root Bloom Oil' },
+  { name: 'Amara',     city: 'Owerri',         product: 'Anti-Dandruff Therapy Oil' },
+  { name: 'Chiamaka',  city: 'Onitsha',        product: 'Moisture Lock Leave-In Conditioner' },
+  { name: 'Peace',     city: 'Warri',          product: 'Edge & Follicle Revive Butter' },
+  { name: 'Uchenna',   city: 'Kano',           product: 'Clarifying Black Shampoo' },
+  { name: 'Ifeoma',    city: 'Ibadan',         product: 'Root Bloom Oil' },
+  { name: 'Tolani',    city: 'Abuja',          product: 'Anti-Dandruff Therapy Oil' },
+  { name: 'Kemi',      city: 'Lagos',          product: 'Intense Repair Deep Conditioner' },
+  { name: 'Simi',      city: 'Benin City',     product: 'Edge & Follicle Revive Butter' },
+  { name: 'Rhoda',     city: 'Asaba',          product: 'Root Bloom Oil' },
+  { name: 'Miriam',    city: 'Calabar',        product: 'Moisture Lock Leave-In Conditioner' },
+  { name: 'Chinwe',    city: 'Aba',            product: 'Clarifying Black Shampoo' },
+  { name: 'Fatima',    city: 'Kaduna',         product: 'Anti-Dandruff Therapy Oil' },
+  { name: 'Aisha',     city: 'Kano',           product: 'Root Bloom Oil' },
+  { name: 'Yetunde',   city: 'Abeokuta',       product: 'Edge & Follicle Revive Butter' },
+  { name: 'Tolu',      city: 'Ilorin',         product: 'Intense Repair Deep Conditioner' },
+  { name: 'Esther',    city: 'Jos',            product: 'Root Bloom Oil' },
+  { name: 'Grace',     city: 'Owerri',         product: 'Clarifying Black Shampoo' },
+  { name: 'Rita',      city: 'Port Harcourt',  product: 'Anti-Dandruff Therapy Oil' },
+  { name: 'Nkechi',    city: 'Enugu',          product: 'Moisture Lock Leave-In Conditioner' },
+  { name: 'Obiageli',  city: 'Awka',           product: 'Edge & Follicle Revive Butter' },
+  { name: 'Precious',  city: 'Lagos',          product: 'Root Bloom Oil' },
+  { name: 'Sandra',    city: 'Abuja',          product: 'Intense Repair Deep Conditioner' },
+  { name: 'Vivian',    city: 'Uyo',            product: 'Anti-Dandruff Therapy Oil' },
+  { name: 'Stella',    city: 'Warri',          product: 'Clarifying Black Shampoo' },
+  { name: 'Josephine', city: 'Makurdi',        product: 'Root Bloom Oil' },
+  { name: 'Nneka',     city: 'Onitsha',        product: 'Edge & Follicle Revive Butter' },
+  { name: 'Patricia',  city: 'Owerri',         product: 'Moisture Lock Leave-In Conditioner' },
+  { name: 'Mary',      city: 'Calabar',        product: 'Root Bloom Oil' },
+  { name: 'Juliet',    city: 'Benin City',     product: 'Clarifying Black Shampoo' },
+  { name: 'Angela',    city: 'Abuja',          product: 'Intense Repair Deep Conditioner' },
+  { name: 'Hadiza',    city: 'Sokoto',         product: 'Anti-Dandruff Therapy Oil' },
+  { name: 'Zainab',    city: 'Maiduguri',      product: 'Root Bloom Oil' },
+  { name: 'Bimpe',     city: 'Lagos',          product: 'Edge & Follicle Revive Butter' },
+  { name: 'Funke',     city: 'Ibadan',         product: 'Clarifying Black Shampoo' },
+  { name: 'Adunola',   city: 'Abeokuta',       product: 'Moisture Lock Leave-In Conditioner' },
+  { name: 'Charity',   city: 'Asaba',          product: 'Root Bloom Oil' },
+  { name: 'Faith',     city: 'Umuahia',        product: 'Anti-Dandruff Therapy Oil' },
+  { name: 'Hope',      city: 'Aba',            product: 'Edge & Follicle Revive Butter' },
+  { name: 'Cynthia',   city: 'Port Harcourt',  product: 'Root Bloom Oil' },
+  { name: 'Ebele',     city: 'Enugu',          product: 'Intense Repair Deep Conditioner' },
+  { name: 'Olachi',    city: 'Owerri',         product: 'Clarifying Black Shampoo' },
+  { name: 'Ifunanya',  city: 'Awka',           product: 'Root Bloom Oil' },
+  { name: 'Tobenna',   city: 'Lagos',          product: 'Moisture Lock Leave-In Conditioner' },
+  { name: 'Ginika',    city: 'Abuja',          product: 'Edge & Follicle Revive Butter' },
+  { name: 'Adaobi',    city: 'Uyo',            product: 'Root Bloom Oil' },
+  { name: 'Chinyere',  city: 'Onitsha',        product: 'Anti-Dandruff Therapy Oil' },
+];
+
+const timeLabels = [
+  'just now', '1 minute ago', '2 minutes ago', '3 minutes ago',
+  '5 minutes ago', '7 minutes ago', '10 minutes ago', '12 minutes ago',
+  '15 minutes ago', '18 minutes ago', '20 minutes ago',
+];
+
+(function initSocialProof() {
+  /* Build the toast element once */
+  const toast = document.createElement('div');
+  toast.className = 'sp-toast';
+  toast.setAttribute('role', 'status');
+  toast.setAttribute('aria-live', 'polite');
+  toast.innerHTML = `
+    <div class="sp-avatar" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+      </svg>
+    </div>
+    <div class="sp-text">
+      <strong class="sp-name"></strong>
+      <span class="sp-detail"></span>
+      <span class="sp-time"></span>
+    </div>
+    <button class="sp-close" aria-label="Dismiss">×</button>
+  `;
+  document.body.appendChild(toast);
+
+  toast.querySelector('.sp-close').addEventListener('click', () => hideToast());
+
+  let hideTimer, nextTimer;
+  let lastIndex = -1;
+
+  function showToast() {
+    /* Pick a random entry that isn't the same as the last one */
+    let idx;
+    do { idx = Math.floor(Math.random() * proofData.length); } while (idx === lastIndex);
+    lastIndex = idx;
+    const entry = proofData[idx];
+    const time  = timeLabels[Math.floor(Math.random() * timeLabels.length)];
+
+    toast.querySelector('.sp-name').textContent   = entry.name + ' from ' + entry.city;
+    toast.querySelector('.sp-detail').textContent = 'ordered ' + entry.product;
+    toast.querySelector('.sp-time').textContent   = time;
+
+    toast.classList.add('sp-visible');
+    hideTimer = setTimeout(hideToast, 5000);
+  }
+
+  function hideToast() {
+    clearTimeout(hideTimer);
+    toast.classList.remove('sp-visible');
+    /* Show next notification after 8–18 seconds */
+    const delay = 8000 + Math.random() * 10000;
+    nextTimer = setTimeout(showToast, delay);
+  }
+
+  /* First notification after 6 seconds on page load */
+  setTimeout(showToast, 6000);
+})();
+
 /* ── COPYRIGHT YEAR ─────────────────────────────────────────── */
 const yrEl = document.getElementById('yr');
 if (yrEl) yrEl.textContent = new Date().getFullYear();

@@ -1157,6 +1157,74 @@ h1,h2,h3,h4 { line-height: 1.15; }
   .review-card--cta .review-cta-inner { padding: 28px 20px; }
 }
 
+/* ── SOCIAL PROOF TOAST ─────────────────────────────────────── */
+.sp-toast {
+  position: fixed;
+  bottom: 100px;
+  left: 24px;
+  z-index: 95;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(253,244,232,.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.7);
+  border-left: 3px solid var(--coral);
+  border-radius: 14px;
+  padding: 13px 14px 13px 14px;
+  box-shadow: 0 8px 32px rgba(42,31,26,.14);
+  max-width: 300px;
+  transform: translateX(calc(-100% - 32px));
+  opacity: 0;
+  transition: transform .45s cubic-bezier(.34,1.56,.64,1), opacity .35s ease;
+  pointer-events: none;
+}
+.sp-toast.sp-visible {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+}
+.sp-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pale-pink), var(--peach));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--deep-coral);
+  flex-shrink: 0;
+}
+.sp-text {
+  display: flex; flex-direction: column; gap: 1px;
+  flex: 1; min-width: 0;
+}
+.sp-name {
+  font-size: .82rem; font-weight: 700;
+  color: var(--dark-brown);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.sp-detail {
+  font-size: .76rem; color: var(--soft-brown);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.sp-time {
+  font-size: .68rem; color: var(--coral);
+  font-weight: 500;
+}
+.sp-close {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; line-height: 1;
+  color: #bbb; flex-shrink: 0;
+  transition: color .2s, background .2s;
+}
+.sp-close:hover { color: var(--deep-coral); background: rgba(229,102,74,.1); }
+
+/* On mobile push it above the sticky bar */
+@media (max-width: 900px) {
+  .sp-toast { bottom: 80px; left: 12px; max-width: calc(100vw - 24px); }
+}
+
 /* Very small screens */
 @media (max-width: 380px) {
   .hero-content h1 { font-size: 2.4rem; }
