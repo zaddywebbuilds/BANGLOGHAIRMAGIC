@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    BANGLOG HAIR MAGIC — styles.css
    Premium Natural Haircare Website
    ============================================================ */
@@ -422,12 +422,12 @@ h1,h2,h3,h4 { line-height: 1.15; }
 }
 
 /* ── PRINCIPLES ─────────────────────────────────────────────── */
-.principles { padding: 100px 0; }
+.principles { padding: 60px 0; }
 .principles .section-heading { max-width: 500px; }
 .principles-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px; margin-top: 52px;
+  gap: 24px; margin-top: 32px;
 }
 .principle-card {
   background: var(--glass-bg);
@@ -467,7 +467,7 @@ h1,h2,h3,h4 { line-height: 1.15; }
 .principle-card p { font-size: .9rem; color: var(--soft-brown); line-height: 1.65; }
 
 /* ── WHY BANGLOG ────────────────────────────────────────────── */
-.why-banglog { padding: 100px 0; background: linear-gradient(180deg, transparent 0%, rgba(248,212,187,.2) 50%, transparent 100%); }
+.why-banglog { padding: 60px 0; background: linear-gradient(180deg, transparent 0%, rgba(248,212,187,.2) 50%, transparent 100%); }
 .why-inner { display: grid; grid-template-columns: 45% 55%; gap: 72px; align-items: center; }
 
 .why-image-col { position: relative; }
@@ -496,9 +496,9 @@ h1,h2,h3,h4 { line-height: 1.15; }
 }
 
 /* ── CONCERNS ───────────────────────────────────────────────── */
-.concerns { padding: 100px 0; }
+.concerns { padding: 60px 0; }
 .concerns .section-heading { margin-bottom: 12px; }
-.concerns .section-sub { margin-bottom: 52px; }
+.concerns .section-sub { margin-bottom: 32px; }
 .concerns-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -530,7 +530,7 @@ h1,h2,h3,h4 { line-height: 1.15; }
 }
 
 /* ── PRODUCTS ───────────────────────────────────────────────── */
-.products { padding: 100px 0; position: relative; overflow: hidden; }
+.products { padding: 60px 0; position: relative; overflow: hidden; }
 .products-bg {
   position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(248,212,187,.25) 0%, transparent 70%);
@@ -627,16 +627,16 @@ h1,h2,h3,h4 { line-height: 1.15; }
 }
 .qty-btn:hover { background: var(--coral); color: #fff; }
 .qty-val { font-size: .9rem; font-weight: 600; min-width: 20px; text-align: center; color: var(--dark-brown); }
-.products-cta { text-align: center; margin-top: 52px; }
+.products-cta { text-align: center; margin-top: 32px; }
 .products-note { font-size: .74rem; color: #9a8880; margin-top: 14px; }
 
 /* ── RESULTS ────────────────────────────────────────────────── */
-.results { padding: 100px 0; background: linear-gradient(180deg, transparent 0%, rgba(244,229,208,.3) 50%, transparent 100%); }
+.results { padding: 60px 0; background: linear-gradient(180deg, transparent 0%, rgba(244,229,208,.3) 50%, transparent 100%); }
 .results .section-heading { margin-bottom: 12px; }
 .results-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px; margin-top: 52px;
+  gap: 24px; margin-top: 32px;
 }
 .result-card {
   overflow: hidden; margin: 0;
@@ -668,7 +668,7 @@ h1,h2,h3,h4 { line-height: 1.15; }
 .results-cta { text-align: center; margin-top: 40px; }
 
 /* ── ROUTINE ────────────────────────────────────────────────── */
-.routine { padding: 100px 0; }
+.routine { padding: 60px 0; }
 .routine-inner { display: grid; grid-template-columns: 55% 45%; gap: 64px; align-items: center; }
 .routine-card { padding: 48px 44px; }
 .routine-heading {
@@ -728,7 +728,7 @@ h1,h2,h3,h4 { line-height: 1.15; }
 
 /* ── OUTCOMES STRIP ─────────────────────────────────────────── */
 .outcomes {
-  padding: 80px 0;
+  padding: 56px 0;
   background: linear-gradient(135deg, var(--dark-brown) 0%, #3d2e26 100%);
   position: relative; overflow: hidden;
 }
@@ -771,7 +771,7 @@ h1,h2,h3,h4 { line-height: 1.15; }
 }
 
 /* ── BRAND STORY ────────────────────────────────────────────── */
-.brand-story { padding: 100px 0; }
+.brand-story { padding: 60px 0; }
 .story-inner { display: grid; grid-template-columns: 44% 56%; gap: 72px; align-items: center; }
 .story-img-col { position: relative; }
 .story-img {
@@ -808,11 +808,11 @@ h1,h2,h3,h4 { line-height: 1.15; }
 }
 
 /* ── VALUES ─────────────────────────────────────────────────── */
-.values { padding: 100px 0; background: linear-gradient(180deg, transparent 0%, rgba(248,212,187,.2) 50%, transparent 100%); }
+.values { padding: 60px 0; background: linear-gradient(180deg, transparent 0%, rgba(248,212,187,.2) 50%, transparent 100%); }
 .values .section-heading { margin-bottom: 12px; }
 .values-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 24px; margin-top: 52px;
+  gap: 24px; margin-top: 32px;
 }
 .value-card {
   padding: 32px 26px; text-align: center;
@@ -833,12 +833,12 @@ h1,h2,h3,h4 { line-height: 1.15; }
 .value-card p { font-size: .86rem; color: var(--soft-brown); line-height: 1.65; }
 
 /* ── REVIEWS ────────────────────────────────────────────────── */
-.reviews { padding: 100px 0; }
+.reviews { padding: 60px 0; }
 .reviews .section-heading { margin-bottom: 12px; }
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px; margin-top: 52px;
+  gap: 24px; margin-top: 32px;
 }
 .review-card {
   display: flex; flex-direction: column; gap: 16px;
@@ -881,7 +881,7 @@ h1,h2,h3,h4 { line-height: 1.15; }
 .review-cta-inner p { font-size: .88rem; color: rgba(253,244,232,.7); line-height: 1.6; }
 
 /* ── FAQ ────────────────────────────────────────────────────── */
-.faq { padding: 100px 0; }
+.faq { padding: 60px 0; }
 .faq-inner { display: grid; grid-template-columns: 36% 64%; gap: 72px; align-items: start; }
 .faq-header { position: sticky; top: 100px; }
 .faq-header .section-sub { margin-top: 12px; }
@@ -915,7 +915,7 @@ h1,h2,h3,h4 { line-height: 1.15; }
 
 /* ── FINAL CTA ──────────────────────────────────────────────── */
 .final-cta {
-  padding: 100px 0;
+  padding: 60px 0;
   background: linear-gradient(135deg, var(--deep-coral) 0%, var(--coral) 45%, #F5A882 100%);
   position: relative; overflow: hidden;
   text-align: center;
@@ -964,7 +964,7 @@ h1,h2,h3,h4 { line-height: 1.15; }
 .footer-top {
   display: grid;
   grid-template-columns: 260px 1fr 1fr 220px;
-  gap: 48px; padding: 72px 24px 56px;
+  gap: 48px; padding: 52px 24px 40px;
 }
 .footer-logo .logo-script { color: var(--coral); }
 .footer-logo .logo-serif { color: var(--cream); }
@@ -1130,9 +1130,9 @@ h1,h2,h3,h4 { line-height: 1.15; }
   .hero-script-accent { font-size: 2rem; }
   .hero-buttons { flex-direction: column; }
   .hero-buttons .btn { width: 100%; justify-content: center; }
-  .principles { padding: 72px 0; }
+  .principles { padding: 48px 0; }
   .principles-grid { grid-template-columns: 1fr; }
-  .why-banglog,.concerns,.products,.results,.routine,.brand-story,.values,.reviews,.faq { padding: 72px 0; }
+  .why-banglog,.concerns,.products,.results,.routine,.brand-story,.values,.reviews,.faq { padding: 48px 0; }
   .concerns-grid { grid-template-columns: 1fr; }
   .products-grid { grid-template-columns: 1fr; }
   .results-grid { grid-template-columns: 1fr; }
@@ -1140,7 +1140,7 @@ h1,h2,h3,h4 { line-height: 1.15; }
   .values-grid { grid-template-columns: 1fr; }
   .outcomes { padding: 60px 0; }
   .outcomes-strip { flex-direction: column; gap: 24px; }
-  .final-cta { padding: 80px 0; }
+  .final-cta { padding: 56px 0; }
   .cta-buttons { flex-direction: column; align-items: center; }
   .cta-arrow-wrap { flex-direction: column; align-items: center; }
   .cta-arrow { display: none; }
