@@ -214,7 +214,7 @@ h1,h2,h3,h4 { line-height: 1.15; }
   text-transform: uppercase;
   color: var(--soft-gold);
   padding-right: 28px;
-  animation: marquee-scroll 28s linear infinite;
+  animation: marquee-scroll 50s linear infinite;
   will-change: transform;
 }
 .announcement-slide span {
@@ -1239,6 +1239,7 @@ h1,h2,h3,h4 { line-height: 1.15; }
 }
 
 @media (max-width: 640px) {
+  .announcement-slide { animation-duration: 30s; }
   .container { padding: 0 16px; }
   .hero { padding: 60px 0 0; min-height: auto; }
   .hero-content h1 { font-size: 2.8rem; }
