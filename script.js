@@ -117,6 +117,15 @@ function renderCart() {
   });
 }
 
+/* Clicking anywhere on a product card triggers the order button */
+document.querySelectorAll('.product-card').forEach(card => {
+  card.addEventListener('click', e => {
+    if (e.target.closest('.btn-order') || e.target.closest('.product-qty')) return;
+    const orderBtn = card.querySelector('.btn-order');
+    if (orderBtn) orderBtn.click();
+  });
+});
+
 /* "Order on WhatsApp" buttons — add to cart and open drawer */
 document.querySelectorAll('.btn-order').forEach(btn => {
   btn.addEventListener('click', () => {
