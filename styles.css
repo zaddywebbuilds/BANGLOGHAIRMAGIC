@@ -1028,6 +1028,16 @@ h1,h2,h3,h4 { line-height: 1.15; }
 .footer-contact strong { color: rgba(253,244,232,.8); display: block; margin-bottom: 2px; }
 .footer-contact a { color: var(--coral); transition: color var(--transition); }
 .footer-contact a:hover { color: var(--peach); }
+.footer-disclaimer {
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+.footer-disclaimer p {
+  font-size: .72rem; line-height: 1.7;
+  color: rgba(253,244,232,.4);
+  max-width: 860px;
+}
+.footer-disclaimer strong { color: rgba(253,244,232,.6); }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.07); }
 .footer-bottom-inner {
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
