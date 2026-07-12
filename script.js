@@ -117,6 +117,89 @@ function renderCart() {
   });
 }
 
+/* ── PER-PRODUCT WHATSAPP MESSAGE CATALOG ───────────────────── */
+const productCatalog = {
+  'Root Bloom Oil (100ml)': {
+    emoji: '🌿',
+    price: '₦7,000',
+    detail: 'Saw Palmetto · Rosemary · Bhringraj | 100ml',
+    note: 'Best for scalp nourishment & hair growth'
+  },
+  'Clarifying Black Shampoo (500ml)': {
+    emoji: '🖤',
+    price: '₦9,500',
+    detail: 'Strengthens Roots · Calms Itchy Scalp | 500ml',
+    note: 'Best for cleansing & scalp reset'
+  },
+  'Clarifying Black Shampoo (250ml)': {
+    emoji: '🖤',
+    price: '₦5,000',
+    detail: 'Strengthens Roots · Calms Itchy Scalp | 250ml',
+    note: 'Compact travel-friendly size'
+  },
+  'Intense Repair Deep Conditioner (250ml)': {
+    emoji: '💧',
+    price: '₦8,500',
+    detail: 'Deep Nourishment · Strength · Elasticity | 250ml',
+    note: 'Best for damaged & dry hair'
+  },
+  'Moisture Lock Leave-In Conditioner (250ml)': {
+    emoji: '✨',
+    price: '₦8,500',
+    detail: 'Daily Hydration · Moisture Retention | 250ml',
+    note: 'Best for natural & textured hair'
+  },
+  'Edge & Follicle Revive Butter (250g)': {
+    emoji: '🏆',
+    price: '₦10,800',
+    detail: 'Edges · Follicle Care · Multi-Purpose | 250g',
+    note: 'Customer favourite for edge restoration'
+  },
+  'Edge & Follicle Revive Butter (150g)': {
+    emoji: '🏆',
+    price: '₦7,000',
+    detail: 'Edges · Follicle Care · Multi-Purpose | 150g',
+    note: 'Compact size for on-the-go use'
+  },
+  'Anti-Dandruff Therapy Oil (100ml)': {
+    emoji: '🌱',
+    price: '₦9,500',
+    detail: 'Amla · Neem · Peppermint | 100ml',
+    note: 'Best for dandruff control & scalp repair'
+  },
+  'Starter Kit': {
+    emoji: '🎁',
+    price: '₦27,300',
+    detail: 'Edge Butter + Anti-Dandruff Shampoo ×2 + Root Bloom Oil',
+    note: 'Best value bundle for beginners'
+  },
+  'Anti-Dandruff Kit': {
+    emoji: '💊',
+    price: '₦30,600',
+    detail: 'Edge Butter + Anti-Dandruff Shampoo ×2 + Therapy Oil ×3',
+    note: 'Complete dandruff-fighting system'
+  },
+};
+
+function buildProductMessage(productKey, qty) {
+  const p = productCatalog[productKey] || { emoji: '🛒', price: '', detail: '', note: '' };
+  return (
+    `Hello BANGLOG HAIR MAGIC 👋\n\n` +
+    `I would like to order:\n\n` +
+    `${p.emoji} *${productKey}*\n` +
+    `💰 Price: ${p.price}\n` +
+    `📦 Qty: ${qty}\n` +
+    `📝 ${p.detail}\n` +
+    `💡 ${p.note}\n\n` +
+    `──────────────────\n` +
+    `My name:\n` +
+    `📍 Delivery address:\n` +
+    `💳 Payment method:\n` +
+    `──────────────────\n\n` +
+    `Please confirm availability. Thank you!`
+  );
+}
+
 /* Clicking anywhere on a product card triggers the order button */
 document.querySelectorAll('.product-card').forEach(card => {
   card.addEventListener('click', e => {
@@ -126,27 +209,31 @@ document.querySelectorAll('.product-card').forEach(card => {
   });
 });
 
-/* "Order on WhatsApp" buttons — add to cart and open drawer */
+/* "Order on WhatsApp" — opens WhatsApp directly with product-specific message */
 document.querySelectorAll('.btn-order').forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
     const productName = btn.dataset.product;
     const card = btn.closest('.product-card');
     const qtyEl = card ? card.querySelector('.qty-val') : null;
     const qty = qtyEl ? parseInt(qtyEl.textContent) : 1;
 
-    cart[productName] = (cart[productName] || 0) + qty;
-    renderCart();
-    openDrawer();
+    const msg = buildProductMessage(productName, qty);
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank', 'noopener');
   });
 });
 
-/* Send order via WhatsApp */
+/* Send order via WhatsApp (drawer — multi-product) */
 drawerWaBtn.addEventListener('click', () => {
   const items = Object.keys(cart);
   if (!items.length) { alert('Please add products before ordering.'); return; }
 
-  const lines = items.map(k => `- ${k} × ${cart[k]}`).join('\n');
-  const msg = `Hello BANGLOG HAIR MAGIC. I would like to order:\n\n${lines}\n\nMy name:\nDelivery location:\nPreferred payment method:`;
+  const lines = items.map(k => {
+    const p = productCatalog[k] || { emoji: '🛒', price: '' };
+    return `${p.emoji} *${k}* × ${cart[k]}  ${p.price}`;
+  }).join('\n');
+  const msg = `Hello BANGLOG HAIR MAGIC 👋\n\nI would like to order:\n\n${lines}\n\n──────────────────\nMy name:\n📍 Delivery address:\n💳 Payment method:\n──────────────────\n\nPlease confirm availability. Thank you!`;
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank', 'noopener');
   closeDrawer();
