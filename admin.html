@@ -168,9 +168,9 @@ input,select,textarea,button{font-family:inherit;font-size:14px}
       <div class="card-title"><span class="dot"></span> New Order</div>
       <form id="newForm" novalidate>
         <div class="field"><label>Customer Name</label><input type="text" id="fName" placeholder="e.g. Amaka Obi" required /></div>
-        <div class="field"><label>Phone (WhatsApp)</label><input type="tel" id="fPhone" placeholder="e.g. 08012345678" /></div>
+        <div class="field"><label>Phone (WhatsApp)</label><input type="tel" id="fPhone" placeholder="e.g. 08012345678" required /></div>
         <div class="field"><label>Product Ordered</label>
-          <select id="fProduct">
+          <select id="fProduct" required>
             <option value="">— Select product —</option>
             <option>Clarifying Black Shampoo (500ml)</option>
             <option>Clarifying Black Shampoo (250ml)</option>
@@ -181,7 +181,7 @@ input,select,textarea,button{font-family:inherit;font-size:14px}
             <option>Other</option>
           </select>
         </div>
-        <div class="field"><label>Delivery Address</label><textarea id="fAddress" placeholder="Full delivery address, city, state"></textarea></div>
+        <div class="field"><label>Delivery Address</label><textarea id="fAddress" placeholder="Full delivery address, city, state" required></textarea></div>
         <div class="field"><label>Optional Note</label><input type="text" id="fNote" placeholder="e.g. fragile, leave at gate" /></div>
         <button type="submit" class="btn btn-coral">
           <span class="spin" id="createSpin"></span>Create Order &amp; Generate Code
@@ -350,7 +350,13 @@ g('newForm').addEventListener('submit', async e => {
   const msg = g('createMsg'); msg.style.display='none';
 
   const name = g('fName').value.trim();
-  if(!name){ msg.textContent='Customer name is required.'; msg.className='err'; msg.style.display='block'; spin.style.display='none'; return; }
+  const phone = g('fPhone').value.trim();
+  const product = g('fProduct').value;
+  const address = g('fAddress').value.trim();
+  if(!name || !phone || !product || !address){
+    msg.textContent='Please fill in all required fields (Name, Phone, Product, Address).';
+    msg.className='err'; msg.style.display='block'; spin.style.display='none'; return;
+  }
 
   const events = [{ date:new Date().toISOString(), title:'Order Confirmed', location:'', desc: g('fNote').value.trim()||'Order received and logged.' }];
   const row = {
