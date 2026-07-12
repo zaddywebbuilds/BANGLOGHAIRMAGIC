@@ -480,15 +480,20 @@ h1,h2,h3,h4 { line-height: 1.15; }
 .principle-card:hover::before { opacity: 1; }
 
 .principle-media {
-  width: 100%; height: 240px;
+  width: 100%;
   overflow: hidden; flex-shrink: 0;
   border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--cream);
 }
-.principle-media img,
-.principle-media video {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center center;
+.principle-media img {
+  width: 100%; height: auto;
   display: block;
+  object-fit: contain;
+}
+.principle-media video {
+  width: 100%; height: 260px;
+  display: block;
+  object-fit: cover;
 }
 
 .principle-body {
@@ -563,14 +568,15 @@ h1,h2,h3,h4 { line-height: 1.15; }
 }
 .concern-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lift); }
 .concern-media {
-  width: 100%; height: 220px;
+  width: 100%;
   overflow: hidden; flex-shrink: 0;
   border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--cream);
 }
 .concern-media img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center center;
+  width: 100%; height: auto;
   display: block;
+  object-fit: contain;
 }
 .concern-body { padding: 20px 22px 24px; }
 .concern-icon {
