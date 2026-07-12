@@ -131,18 +131,6 @@ const productCatalog = {
     detail: 'Strengthens Roots · Calms Itchy Scalp | 500ml',
     note: 'Best for cleansing & scalp reset'
   },
-  'Clarifying Black Shampoo (250ml)': {
-    emoji: '🖤',
-    price: '₦5,000',
-    detail: 'Strengthens Roots · Calms Itchy Scalp | 250ml',
-    note: 'Compact travel-friendly size'
-  },
-  'Intense Repair Deep Conditioner (250ml)': {
-    emoji: '💧',
-    price: '₦8,500',
-    detail: 'Deep Nourishment · Strength · Elasticity | 250ml',
-    note: 'Best for damaged & dry hair'
-  },
   'Moisture Lock Leave-In Conditioner (250ml)': {
     emoji: '✨',
     price: '₦8,500',
@@ -154,12 +142,6 @@ const productCatalog = {
     price: '₦10,800',
     detail: 'Edges · Follicle Care · Multi-Purpose | 250g',
     note: 'Customer favourite for edge restoration'
-  },
-  'Edge & Follicle Revive Butter (150g)': {
-    emoji: '🏆',
-    price: '₦7,000',
-    detail: 'Edges · Follicle Care · Multi-Purpose | 150g',
-    note: 'Compact size for on-the-go use'
   },
   'Anti-Dandruff Therapy Oil (100ml)': {
     emoji: '🌱',
@@ -285,7 +267,7 @@ const proofData = [
   { name: 'Chioma',    city: 'Abuja',         product: 'Root Bloom Oil' },
   { name: 'Blessing',  city: 'Lagos',          product: 'Edge & Follicle Revive Butter' },
   { name: 'Ngozi',     city: 'Enugu',          product: 'Clarifying Black Shampoo' },
-  { name: 'Adaeze',    city: 'Port Harcourt',  product: 'Intense Repair Deep Conditioner' },
+  { name: 'Adaeze',    city: 'Port Harcourt',  product: 'Starter Kit' },
   { name: 'Favour',    city: 'Umuahia',        product: 'Root Bloom Oil' },
   { name: 'Amara',     city: 'Owerri',         product: 'Anti-Dandruff Therapy Oil' },
   { name: 'Chiamaka',  city: 'Onitsha',        product: 'Moisture Lock Leave-In Conditioner' },
@@ -293,7 +275,7 @@ const proofData = [
   { name: 'Uchenna',   city: 'Kano',           product: 'Clarifying Black Shampoo' },
   { name: 'Ifeoma',    city: 'Ibadan',         product: 'Root Bloom Oil' },
   { name: 'Tolani',    city: 'Abuja',          product: 'Anti-Dandruff Therapy Oil' },
-  { name: 'Kemi',      city: 'Lagos',          product: 'Intense Repair Deep Conditioner' },
+  { name: 'Kemi',      city: 'Lagos',          product: 'Starter Kit' },
   { name: 'Simi',      city: 'Benin City',     product: 'Edge & Follicle Revive Butter' },
   { name: 'Rhoda',     city: 'Asaba',          product: 'Root Bloom Oil' },
   { name: 'Miriam',    city: 'Calabar',        product: 'Moisture Lock Leave-In Conditioner' },
@@ -301,14 +283,14 @@ const proofData = [
   { name: 'Fatima',    city: 'Kaduna',         product: 'Anti-Dandruff Therapy Oil' },
   { name: 'Aisha',     city: 'Kano',           product: 'Root Bloom Oil' },
   { name: 'Yetunde',   city: 'Abeokuta',       product: 'Edge & Follicle Revive Butter' },
-  { name: 'Tolu',      city: 'Ilorin',         product: 'Intense Repair Deep Conditioner' },
+  { name: 'Tolu',      city: 'Ilorin',         product: 'Starter Kit' },
   { name: 'Esther',    city: 'Jos',            product: 'Root Bloom Oil' },
   { name: 'Grace',     city: 'Owerri',         product: 'Clarifying Black Shampoo' },
   { name: 'Rita',      city: 'Port Harcourt',  product: 'Anti-Dandruff Therapy Oil' },
   { name: 'Nkechi',    city: 'Enugu',          product: 'Moisture Lock Leave-In Conditioner' },
   { name: 'Obiageli',  city: 'Awka',           product: 'Edge & Follicle Revive Butter' },
   { name: 'Precious',  city: 'Lagos',          product: 'Root Bloom Oil' },
-  { name: 'Sandra',    city: 'Abuja',          product: 'Intense Repair Deep Conditioner' },
+  { name: 'Sandra',    city: 'Abuja',          product: 'Starter Kit' },
   { name: 'Vivian',    city: 'Uyo',            product: 'Anti-Dandruff Therapy Oil' },
   { name: 'Stella',    city: 'Warri',          product: 'Clarifying Black Shampoo' },
   { name: 'Josephine', city: 'Makurdi',        product: 'Root Bloom Oil' },
@@ -316,7 +298,7 @@ const proofData = [
   { name: 'Patricia',  city: 'Owerri',         product: 'Moisture Lock Leave-In Conditioner' },
   { name: 'Mary',      city: 'Calabar',        product: 'Root Bloom Oil' },
   { name: 'Juliet',    city: 'Benin City',     product: 'Clarifying Black Shampoo' },
-  { name: 'Angela',    city: 'Abuja',          product: 'Intense Repair Deep Conditioner' },
+  { name: 'Angela',    city: 'Abuja',          product: 'Starter Kit' },
   { name: 'Hadiza',    city: 'Sokoto',         product: 'Anti-Dandruff Therapy Oil' },
   { name: 'Zainab',    city: 'Maiduguri',      product: 'Root Bloom Oil' },
   { name: 'Bimpe',     city: 'Lagos',          product: 'Edge & Follicle Revive Butter' },
@@ -326,7 +308,7 @@ const proofData = [
   { name: 'Faith',     city: 'Umuahia',        product: 'Anti-Dandruff Therapy Oil' },
   { name: 'Hope',      city: 'Aba',            product: 'Edge & Follicle Revive Butter' },
   { name: 'Cynthia',   city: 'Port Harcourt',  product: 'Root Bloom Oil' },
-  { name: 'Ebele',     city: 'Enugu',          product: 'Intense Repair Deep Conditioner' },
+  { name: 'Ebele',     city: 'Enugu',          product: 'Starter Kit' },
   { name: 'Olachi',    city: 'Owerri',         product: 'Clarifying Black Shampoo' },
   { name: 'Ifunanya',  city: 'Awka',           product: 'Root Bloom Oil' },
   { name: 'Tobenna',   city: 'Lagos',          product: 'Moisture Lock Leave-In Conditioner' },
