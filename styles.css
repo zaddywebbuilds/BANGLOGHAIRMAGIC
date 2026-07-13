@@ -497,15 +497,8 @@ h1,h2,h3,h4 { line-height: 1.15; }
 }
 
 .principle-body {
-  padding: 24px 24px 28px;
+  padding: 16px 20px 20px;
   position: relative; flex: 1;
-}
-
-.principle-icon {
-  width: 48px; height: 48px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--pale-pink), var(--peach));
-  display: flex; align-items: center; justify-content: center;
-  color: var(--deep-coral); margin-bottom: 14px;
 }
 .principle-num {
   font-family: var(--font-serif);
@@ -578,13 +571,7 @@ h1,h2,h3,h4 { line-height: 1.15; }
   display: block;
   object-fit: contain;
 }
-.concern-body { padding: 20px 22px 24px; }
-.concern-icon {
-  width: 44px; height: 44px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--pale-pink), var(--peach));
-  display: flex; align-items: center; justify-content: center;
-  color: var(--deep-coral); margin-bottom: 12px;
-}
+.concern-body { padding: 14px 18px 18px; }
 .concern-card h3 {
   font-family: var(--font-serif);
   font-size: 1.05rem; font-weight: 600;
